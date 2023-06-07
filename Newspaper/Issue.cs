@@ -26,11 +26,9 @@ namespace Newspaper
         }
         public List<string> ReporterNames(NewspaperContext context)
         {
-
             var articleList = context.Articles.Where(article => article.Issue.Id == Id);
-            List<string> reporterNameList = articleList.Select(a => a.Reporter.Name).ToList();
-            List<string> uniqueReporterList = reporterNameList.Distinct();
-            return uniqueReporterList;
+            var reporterNameList = articleList.Select(a => a.Reporter.Name).Distinct().ToList();
+            return reporterNameList;
         }
     }
 }
