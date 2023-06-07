@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Newspaper
 {
-    public class Reporter
+    public class Issue
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Specialty { get; set; }
+        public DateTime Date { get; set; }
         public List<Article> Articles { get; set; }
     }
 }
